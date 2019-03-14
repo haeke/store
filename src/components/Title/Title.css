@@ -1,0 +1,13 @@
+.titleContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.titleName,
+.title {
+  font-family: "Proza Libre", sans-serif;
+  color: var(--brandColor);
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  margin: 5px;
+}

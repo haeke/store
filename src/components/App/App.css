@@ -1,0 +1,47 @@
+/* The main stylesheet that we want to use */
+:root {
+  --brandColor: #2a2a72;
+  --altBrand: #009ffd;
+  --mainWhite: #f3f3f3;
+  --mainDark: #232528;
+  --mainYellow: #ffa400;
+}
+
+p {
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Exo 2", sans-serif !important;
+  background: var(--altBrand);
+  color: var(--mainDark);
+  font-size: 16px;
+  margin: 0;
+}
+
+.textTitle {
+  font-family: "Proza Libre", sans-serif;
+  color: var(--mainWhite);
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.centeredText {
+  text-align: center;
+}
+
+.textBlue {
+  color: var(--altBrand);
+}
+
+.textBright {
+  color: var(--brandColor);
+}
+
+.storeFront {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}

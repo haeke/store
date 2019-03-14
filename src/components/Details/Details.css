@@ -1,0 +1,70 @@
+.detailsContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.detailsInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailsTitleWrapper {
+  text-align: center;
+}
+
+.detailsTitle {
+  font-size: 2rem;
+}
+
+.company {
+  font-size: 2rem;
+  color: #ccc;
+  text-transform: capitalize;
+}
+
+.detailsPrice {
+  text-transform: capitalize;
+}
+
+.detailsButtonWrapper {
+  display: flex;
+}
+
+.detailProductBtn {
+  text-transform: capitalize;
+  border: 1px solid var(--brandColor);
+  margin-right: 20px;
+  background: transparent;
+  color: var(--mainWhite);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-align-self: baseline;
+  align-self: baseline;
+  border-radius: 0.5rem 0 0.5rem 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.detailProductBtn:hover {
+  background: var(--brandColor);
+}
+
+.detailCartBtn {
+  text-transform: capitalize;
+  border: 1px solid var(--mainYellow);
+  background: transparent;
+  color: var(--mainWhite);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-align-self: baseline;
+  align-self: baseline;
+  border-radius: 0.5rem 0 0.5rem 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.detailCartBtn:hover {
+  background: var(--mainYellow);
+  color: var(--mainWhite);
+}

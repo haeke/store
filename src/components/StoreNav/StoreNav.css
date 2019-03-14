@@ -1,0 +1,37 @@
+.storeNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--brandColor);
+  margin: 0;
+  height: 10vh;
+  list-style: none;
+}
+
+.storeLogo {
+  margin: auto auto auto 10px;
+  color: var(--mainWhite);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.cartBtn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.cartBtn:hover {
+  cursor: pointer;
+}
+
+.storeLink {
+  margin-right: 10px;
+  color: var(--mainWhite);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.white {
+  color: var(--mainWhite);
+}

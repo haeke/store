@@ -1,0 +1,31 @@
+.cartColumnsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.cartProducts {
+  flex: 1;
+}
+
+.cartProductName {
+  flex: 1;
+}
+
+.cartPrice {
+  flex: 1;
+}
+
+.cartQuantity {
+  flex: 1;
+}
+
+.cartRemove {
+  flex: 1;
+}
+
+.cartTotal {
+  flex: 1;
+}

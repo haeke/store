@@ -1,0 +1,26 @@
+.cartTotalsContainer {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.clearCartBtn {
+  text-transform: capitalize;
+  border: none;
+  background: red;
+  color: var(--mainWhite);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-align-self: baseline;
+  align-self: baseline;
+  border-radius: 0.5rem 0 0.5rem 0;
+}
+
+.subTotal,
+.tax,
+.total {
+  color: var(--mainWhite);
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
