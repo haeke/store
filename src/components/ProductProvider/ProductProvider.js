@@ -39,7 +39,6 @@ class ProductProvider extends Component {
   };
 
   handleDetail = detailId => {
-    console.log(detailId);
     const product = this.getItem(detailId);
     this.setState(() => ({
       detail: product
@@ -80,7 +79,6 @@ class ProductProvider extends Component {
   };
   // used to increase, decrease items inside of the cart component
   increment = id => {
-    console.log("called increment ", id);
     let tempCart = [...this.state.cart];
     const selectedItem = tempCart.find(item => item.id === id);
 
@@ -100,7 +98,6 @@ class ProductProvider extends Component {
     );
   };
   decrement = id => {
-    console.log("called decrement ", id);
     let tempCart = [...this.state.cart];
     const selectedItem = tempCart.find(item => item.id === id);
 
@@ -124,7 +121,6 @@ class ProductProvider extends Component {
     }
   };
   removeItem = id => {
-    console.log("called removeItem with id ", id);
     let tempProducts = [...this.state.products];
     let tempCart = [...this.state.cart];
 
@@ -133,7 +129,7 @@ class ProductProvider extends Component {
     const index = tempProducts.indexOf(this.getItem(id));
     // the object with the item where we want to remove the count and price properties
     let removedProduct = tempProducts[index];
-    console.log("removed product ", removedProduct);
+
     removedProduct.inCart = false;
     removedProduct.count = 0;
     removedProduct.total = 0;
@@ -148,7 +144,6 @@ class ProductProvider extends Component {
   };
 
   clearCart = () => {
-    console.log("called clear cart");
     this.setState(
       () => ({
         cart: []
