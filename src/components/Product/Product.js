@@ -14,7 +14,6 @@ const Product = ({
     <div
       className="productContainer"
       onClick={() => {
-        handleDetail(product.id);
         openModal();
       }}
     >
