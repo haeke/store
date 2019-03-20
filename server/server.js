@@ -9,8 +9,6 @@ const morgan = require("morgan");
 const path = require("path");
 // import the other routes that we want to use
 const inventory = require("./routes/api/inventory");
-
-console.log(process.env.REACT_APP_MONGO_URI);
 // create the router instance
 const app = express();
 app.use(cors());
