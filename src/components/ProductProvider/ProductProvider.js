@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { storeProducts, detailProduct } from "../../api/e-commerce/data";
+import ecommerce from "../../api/e-commerce";
 // we need to first create the context object.
 const ProductContext = React.createContext();
 
@@ -21,16 +22,23 @@ class ProductProvider extends Component {
     this.setProducts();
   }
 
-  setProducts = () => {
-    let tempProducts = [];
-    storeProducts.forEach(item => {
-      const singleItem = { ...item };
-      tempProducts = [...tempProducts, singleItem];
-    });
+  setProducts = async () => {
+    try {
+      // query the API to get the data stored inside the Inventory Database
+      let res = await ecommerce.get("/api/inventory");
+      // We still create a temporary array that we will use for the products state array.
+      let tempProducts = [];
+      res.data.forEach(item => {
+        const singleItem = { ...item };
+        tempProducts = [...tempProducts, singleItem];
+      });
 
-    this.setState(() => ({
-      products: tempProducts
-    }));
+      this.setState(() => ({
+        products: tempProducts
+      }));
+    } catch (error) {
+      console.error(error);
+    }
   };
   // returns an object for the individual item that was clicked on.
   getItem = detailId => {

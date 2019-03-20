@@ -19,7 +19,7 @@ class StoreFront extends Component {
             {({ products, addToCart, handleDetail, openModal, closeModal }) => {
               return products.map(product => (
                 <Product
-                  key={product.id}
+                  key={product._id}
                   product={product}
                   handleDetail={handleDetail}
                   addToCart={addToCart}
