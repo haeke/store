@@ -14,7 +14,7 @@ const Product = ({
     <div
       className="productContainer"
       onClick={() => {
-        openModal();
+        openModal(product._id);
       }}
     >
       <img src={product.img} alt={product.title} className="productImage" />
@@ -25,8 +25,8 @@ const Product = ({
         <button
           className="productButton"
           onClick={() => {
-            addToCart(product.id);
-            openModal(product.id);
+            addToCart(product._id);
+            openModal(product._id);
           }}
         >
           {product.inCart ? <p>In Cart</p> : <p>Add To Cart</p>}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { storeProducts, detailProduct } from "../../api/e-commerce/data";
+import { detailProduct } from "../../api/e-commerce/data";
 import ecommerce from "../../api/e-commerce";
 // we need to first create the context object.
 const ProductContext = React.createContext();
@@ -42,11 +42,12 @@ class ProductProvider extends Component {
   };
   // returns an object for the individual item that was clicked on.
   getItem = detailId => {
-    const product = this.state.products.find(item => item.id === detailId);
+    const product = this.state.products.find(item => item._id === detailId);
     return product;
   };
 
   handleDetail = detailId => {
+    console.log("handle detail ", detailId);
     const product = this.getItem(detailId);
     this.setState(() => ({
       detail: product
@@ -54,6 +55,7 @@ class ProductProvider extends Component {
   };
 
   addToCart = itemId => {
+    console.log("item id ", itemId);
     let tempProducts = [...this.state.products];
     // get the index for the item that was clicked on
     const index = tempProducts.indexOf(this.getItem(itemId));
@@ -73,10 +75,12 @@ class ProductProvider extends Component {
   };
 
   openModal = id => {
+    console.log("open modal id ", id);
     const product = this.getItem(id);
+    console.log(product);
     this.setState(() => ({
       modalOpen: true,
-      modalProduct: product
+      detail: product
     }));
   };
 
@@ -88,7 +92,7 @@ class ProductProvider extends Component {
   // used to increase, decrease items inside of the cart component
   increment = id => {
     let tempCart = [...this.state.cart];
-    const selectedItem = tempCart.find(item => item.id === id);
+    const selectedItem = tempCart.find(item => item._id === id);
 
     const index = tempCart.indexOf(selectedItem);
     const product = tempCart[index];
@@ -107,7 +111,7 @@ class ProductProvider extends Component {
   };
   decrement = id => {
     let tempCart = [...this.state.cart];
-    const selectedItem = tempCart.find(item => item.id === id);
+    const selectedItem = tempCart.find(item => item._id === id);
 
     const index = tempCart.indexOf(selectedItem);
     const product = tempCart[index];
@@ -132,7 +136,7 @@ class ProductProvider extends Component {
     let tempProducts = [...this.state.products];
     let tempCart = [...this.state.cart];
 
-    tempCart = tempCart.filter(item => item.id !== id);
+    tempCart = tempCart.filter(item => item._id !== id);
 
     const index = tempProducts.indexOf(this.getItem(id));
     // the object with the item where we want to remove the count and price properties
