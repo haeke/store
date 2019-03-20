@@ -47,7 +47,6 @@ class ProductProvider extends Component {
   };
 
   handleDetail = detailId => {
-    console.log("handle detail ", detailId);
     const product = this.getItem(detailId);
     this.setState(() => ({
       detail: product
@@ -55,7 +54,6 @@ class ProductProvider extends Component {
   };
 
   addToCart = itemId => {
-    console.log("item id ", itemId);
     let tempProducts = [...this.state.products];
     // get the index for the item that was clicked on
     const index = tempProducts.indexOf(this.getItem(itemId));
@@ -75,9 +73,7 @@ class ProductProvider extends Component {
   };
 
   openModal = id => {
-    console.log("open modal id ", id);
     const product = this.getItem(id);
-    console.log(product);
     this.setState(() => ({
       modalOpen: true,
       detail: product
