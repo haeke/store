@@ -8,7 +8,8 @@ The motivation for this site is to practice using React Portals, React Context, 
 2. JavaScript
 3. Flexbox
 4. React Router Dom V4
+5. Express - MongoDB / Mongoose
 
 # Site URL
 
-https://priceless-babbage-d69601.netlify.com/
+https://react-storefront-ed.herokuapp.com/
