@@ -5,6 +5,7 @@ import Details from "../Details/Details";
 import NotFound from "../NotFound/NotFound";
 import Modal from "../Modal/Modal";
 import Cart from "../Cart/Cart";
+import Footer from "../Footer/Footer";
 // Passing in the Context object
 import { ProductProvider } from "../ProductProvider/ProductProvider";
 
@@ -26,7 +27,7 @@ const App = () => {
               <Route path="/cart" exact component={Cart} />
               <Route component={NotFound} />
             </Switch>
-            {/* <Footer /> */}
+            <Footer />
             <Modal />
           </div>
         </Router>

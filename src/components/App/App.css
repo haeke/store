@@ -14,7 +14,7 @@ p {
 body {
   box-sizing: border-box;
   font-family: "Exo 2", sans-serif !important;
-  background: var(--altBrand);
+  background: var(--mainWhite);
   color: var(--mainDark);
   font-size: 16px;
   margin: 0;
@@ -22,7 +22,7 @@ body {
 
 .textTitle {
   font-family: "Proza Libre", sans-serif;
-  color: var(--mainWhite);
+  color: var(--mainYellow);
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
@@ -37,11 +37,4 @@ body {
 
 .textBright {
   color: var(--brandColor);
-}
-
-.storeFront {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
 }

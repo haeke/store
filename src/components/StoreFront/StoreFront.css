@@ -1,6 +1,12 @@
+.storeWrapper {
+  padding: 50px 0;
+  background: var(--mainYellow);
+  transform: skewY(-1.5deg);
+}
 .storeFront {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  transform: skewY(1.5deg);
 }

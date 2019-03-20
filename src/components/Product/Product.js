@@ -11,7 +11,7 @@ const Product = ({
   closeModal
 }) => {
   return (
-    <div
+    <section
       className="productContainer"
       onClick={() => {
         openModal(product._id);
@@ -32,7 +32,7 @@ const Product = ({
           {product.inCart ? <p>In Cart</p> : <p>Add To Cart</p>}
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

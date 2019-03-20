@@ -5,7 +5,7 @@ import "./StoreNav.css";
 
 const StoreNav = () => {
   return (
-    <nav>
+    <header>
       <ul className="storeNav">
         <li className="storeLogo">
           <Link to="/" className="storeLogo">
@@ -26,7 +26,7 @@ const StoreNav = () => {
           </Link>
         </li>
       </ul>
-    </nav>
+    </header>
   );
 };
 

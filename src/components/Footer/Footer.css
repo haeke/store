@@ -1,0 +1,9 @@
+.footerNav {
+  display: flex;
+  list-style: none;
+  font-size: 1.5rem;
+  background: var(--brandColor);
+  color: var(--mainWhite);
+  margin: 20px 0 0 0;
+  padding: 30px 0 20px 40px;
+}
