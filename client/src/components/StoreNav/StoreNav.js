@@ -14,8 +14,12 @@ const StoreNav = () => {
         </li>
         <li className="storeLink">
           <Link to="/" className="storeLink">
-            {" "}
             Products
+          </Link>
+        </li>
+        <li className="storeLink">
+          <Link to="/add" className="storeLink">
+            Add Item
           </Link>
         </li>
         <li className="storeLink">

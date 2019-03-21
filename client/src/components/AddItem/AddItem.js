@@ -133,13 +133,18 @@ class AdItem extends Component {
             </label>
             <select
               name="inCart"
+              size="2"
               value={inCart}
-              className="addItemInput"
+              className="addItemSelect"
               onChange={this.handleChange}
               id="inCart"
             >
-              <option value={true}>True</option>
-              <option value={false}>False</option>
+              <option value={true} className="addItemOption">
+                True
+              </option>
+              <option value={false} className="addItemOption">
+                False
+              </option>
             </select>
           </div>
           <div className="inputContainer">

@@ -26,6 +26,22 @@
   border: 1.5px solid var(--mainYellow);
 }
 
+.addItemSelect {
+  display: flex;
+  margin: 10px 0;
+  border: 1.5px solid black;
+}
+
+.addItemSelect:focus {
+  outline: 0;
+  border: 1px solid var(--mainYellow);
+}
+
+.addItemOption {
+  font-size: 1.5rem;
+  margin: 1.5px;
+}
+
 .addItemButton {
   text-transform: capitalize;
   border: none;
