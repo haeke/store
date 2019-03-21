@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import StoreFront from "../StoreFront/StoreFront";
+import StoreNav from "../StoreNav/StoreNav";
 import Details from "../Details/Details";
 import AddItem from "../AddItem/AddItem";
 import NotFound from "../NotFound/NotFound";
@@ -18,6 +19,7 @@ const App = () => {
       <ProductProvider>
         <Router>
           <div className="appContainer">
+            <StoreNav />
             <Switch>
               <Route
                 path="/"

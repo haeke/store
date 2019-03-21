@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import StoreNav from "../StoreNav/StoreNav";
 import Product from "../Product/Product";
 // use the consumer to get access to the context objects value property
 import { ProductConsumer } from "../ProductProvider/ProductProvider";
@@ -11,7 +10,6 @@ class StoreFront extends Component {
   render() {
     return (
       <React.Fragment>
-        <StoreNav />
         <h1 className="textTitle centeredText">Phone Inventory</h1>
         <main className="storeWrapper">
           <section className="storeFront">
