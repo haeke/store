@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import StoreFront from "../StoreFront/StoreFront";
 import Details from "../Details/Details";
+import AddItem from "../AddItem/AddItem";
 import NotFound from "../NotFound/NotFound";
 import Modal from "../Modal/Modal";
 import Cart from "../Cart/Cart";
@@ -23,6 +24,7 @@ const App = () => {
                 exact
                 component={props => <StoreFront {...props} />}
               />
+              <Route path="/add" exact component={AddItem} />
               <Route path="/detail" exact component={Details} />
               <Route path="/cart" exact component={Cart} />
               <Route component={NotFound} />

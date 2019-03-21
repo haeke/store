@@ -1,0 +1,23 @@
+.addItemContainer {
+  padding: 10px;
+}
+
+.addItemForm {
+  max-width: 500px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.addItemLabel {
+  font-size: 1.5rem;
+}
+
+.addItemInput {
+  height: 20px;
+  border: 1px solid black;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}

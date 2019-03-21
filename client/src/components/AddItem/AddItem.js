@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ecommerce from "../../api/e-commerce";
-import "AddItem.css";
+import "./AddItem.css";
 
 class AdItem extends Component {
   state = {
@@ -66,65 +66,96 @@ class AdItem extends Component {
     } = this.state;
     return (
       <div className="addItemContainer">
-        <label>Title</label>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="Image">Image</label>
-        <input
-          type="text"
-          name="image"
-          value={image}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="Price">Price</label>
-        <input
-          type="number"
-          name="price"
-          value={price}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="Company">Company name</label>
-        <input
-          type="text"
-          name="company"
-          value={company}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="Info">Description Information</label>
-        <input
-          type="text"
-          name="info"
-          value={info}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="inCart">In Cart?</label>
-        <select
-          name="inCart"
-          value={inCart}
-          onChange={this.handleChange}
-          id="inCart"
-        >
-          <option value={true}>True</option>
-          <option value={false}>False</option>
-        </select>
-        <label htmlFor="Count">Number of Items</label>
-        <input
-          type="number"
-          name="count"
-          value={count}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="total">Current Total</label>
-        <input
-          type="number"
-          name="total"
-          value={total}
-          onChange={this.handleChange}
-        />
+        <form className="addItemForm" onSubmit={this.handleSubmit}>
+          <div className="inputContainer">
+            <label>Title</label>
+            <input
+              type="text"
+              name="title"
+              value={title}
+              className="addItemInput"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="inputContainer">
+            <label htmlFor="Image">Image</label>
+            <input
+              type="text"
+              name="image"
+              value={image}
+              className="addItemInput"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="inputContainer">
+            <label htmlFor="Price">Price</label>
+            <input
+              type="number"
+              name="price"
+              value={price}
+              className="addItemInput"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="inputContainer">
+            <label htmlFor="Company">Company name</label>
+            <input
+              type="text"
+              name="company"
+              value={company}
+              className="addItemInput"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="inputContainer">
+            <label htmlFor="Info">Description Information</label>
+            <input
+              type="text"
+              name="info"
+              value={info}
+              className="addItemInput"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="inputContainer">
+            <label htmlFor="inCart">In Cart?</label>
+            <select
+              name="inCart"
+              value={inCart}
+              className="addItemInput"
+              onChange={this.handleChange}
+              id="inCart"
+            >
+              <option value={true}>True</option>
+              <option value={false}>False</option>
+            </select>
+          </div>
+          <div className="inputContainer">
+            <label htmlFor="Count">Number of Items</label>
+            <input
+              type="number"
+              name="count"
+              value={count}
+              className="inputContainer"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="inputContainer">
+            <label htmlFor="total">Current Total</label>
+            <input
+              type="number"
+              name="total"
+              value={total}
+              className="inputContainer"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div>
+            <button type="submit" onClick={this.handleSubmit}>
+              Add Item
+            </button>
+          </div>
+        </form>
       </div>
     );
   }
