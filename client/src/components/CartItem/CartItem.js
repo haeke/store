@@ -10,10 +10,12 @@ const CartItem = ({ value, item }) => {
       <h3 className="cartItemPrice">{item.price}</h3>
       <div className="cartItemQuantity">
         <button className="blackBtn" onClick={() => value.decrement(item.id)}>
+          {/* minus html hex code */}
           &#8722;
         </button>
         <button className="blackBtnNum">{item.count}</button>
         <button className="blackBtn" onClick={() => value.increment(item.id)}>
+          {/* plus html hex code */}
           &#x2b;
         </button>
       </div>

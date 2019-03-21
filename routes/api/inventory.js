@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+// validate the Inventory object
+const validateInventory = require("../../utils/inventory");
+
 // get the Inventory Model
 const Inventory = require("../../models/inventory");
 
@@ -29,6 +32,14 @@ router.get("/", async (req, res) => {
 //@desc Add a new item to the inventory database
 //@access public
 router.post("/add", async (req, res) => {
+  // validate the request body passed from the AddItem component
+  const { errors, isValid } = validateInventory(req.body);
+  console.log("errors object ", errors);
+  console.log("is valid check ", isValid);
+  if (!isValid) {
+    // there are errors so we need to return the error object
+    return res.status(400).json(errors);
+  }
   try {
     // Create an object from the request that includes the title, img, price, company, info, inCart, count, and total
     let newItem = {

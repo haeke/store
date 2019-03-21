@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import ecommerce from "../../api/e-commerce";
 import "./AddItem.css";
 
-class AdItem extends Component {
+// This component contains the form for a user to create a new item in the inventory database.
+
+class AddItem extends Component {
   state = {
     title: "",
     image: "",
@@ -11,7 +13,8 @@ class AdItem extends Component {
     info: "",
     inCart: false,
     count: 0,
-    total: 0
+    total: 0,
+    errors: {}
   };
 
   handleChange = event => {
@@ -51,6 +54,10 @@ class AdItem extends Component {
       console.log(response);
     } catch (error) {
       console.error(error);
+      // call setstate to set the errors object
+      this.setState({
+        errors: error.response.data
+      });
     }
   };
   render() {
@@ -62,14 +69,15 @@ class AdItem extends Component {
       info,
       inCart,
       count,
-      total
+      total,
+      errors
     } = this.state;
     return (
       <div className="addItemContainer">
         <form className="addItemForm" onSubmit={this.handleSubmit}>
           <div className="inputContainer">
             <label className="addItemLabel" htmlFor="Title">
-              Title
+              {errors.title ? errors.title : "Title"}
             </label>
             <input
               type="text"
@@ -81,7 +89,7 @@ class AdItem extends Component {
           </div>
           <div className="inputContainer">
             <label className="addItemLabel" htmlFor="Image">
-              Image
+              {errors.img ? errors.img : "Image"}
             </label>
             <input
               type="text"
@@ -93,7 +101,7 @@ class AdItem extends Component {
           </div>
           <div className="inputContainer">
             <label className="addItemLabel" htmlFor="Price">
-              Price
+              {errors.price ? errors.price : "Price"}
             </label>
             <input
               type="number"
@@ -105,7 +113,7 @@ class AdItem extends Component {
           </div>
           <div className="inputContainer">
             <label className="addItemLabel" htmlFor="Company">
-              Company name
+              {errors.company ? errors.company : "Company Name"}
             </label>
             <input
               type="text"
@@ -117,7 +125,7 @@ class AdItem extends Component {
           </div>
           <div className="inputContainer">
             <label className="addItemLabel" htmlFor="Info">
-              Description Information
+              {errors.info ? errors.info : "Description Information"}
             </label>
             <textarea
               type="text"
@@ -149,7 +157,7 @@ class AdItem extends Component {
           </div>
           <div className="inputContainer">
             <label className="addItemLabel" htmlFor="Count">
-              Number of Items
+              {errors.count ? errors.count : "Number of Items"}
             </label>
             <input
               type="number"
@@ -161,7 +169,7 @@ class AdItem extends Component {
           </div>
           <div className="inputContainer">
             <label className="addItemLabel" htmlFor="total">
-              Current Total
+              {errors.total ? errors.total : "Current Total"}
             </label>
             <input
               type="number"
@@ -186,4 +194,4 @@ class AdItem extends Component {
   }
 }
 
-export default AdItem;
+export default AddItem;
