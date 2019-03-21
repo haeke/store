@@ -20,6 +20,12 @@ body {
   margin: 0;
 }
 
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .textTitle {
   font-family: "Proza Libre", sans-serif;
   color: var(--mainYellow);
