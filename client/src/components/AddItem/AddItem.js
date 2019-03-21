@@ -68,7 +68,9 @@ class AdItem extends Component {
       <div className="addItemContainer">
         <form className="addItemForm" onSubmit={this.handleSubmit}>
           <div className="inputContainer">
-            <label>Title</label>
+            <label className="addItemLabel" htmlFor="Title">
+              Title
+            </label>
             <input
               type="text"
               name="title"
@@ -78,7 +80,9 @@ class AdItem extends Component {
             />
           </div>
           <div className="inputContainer">
-            <label htmlFor="Image">Image</label>
+            <label className="addItemLabel" htmlFor="Image">
+              Image
+            </label>
             <input
               type="text"
               name="image"
@@ -88,7 +92,9 @@ class AdItem extends Component {
             />
           </div>
           <div className="inputContainer">
-            <label htmlFor="Price">Price</label>
+            <label className="addItemLabel" htmlFor="Price">
+              Price
+            </label>
             <input
               type="number"
               name="price"
@@ -98,7 +104,9 @@ class AdItem extends Component {
             />
           </div>
           <div className="inputContainer">
-            <label htmlFor="Company">Company name</label>
+            <label className="addItemLabel" htmlFor="Company">
+              Company name
+            </label>
             <input
               type="text"
               name="company"
@@ -108,17 +116,21 @@ class AdItem extends Component {
             />
           </div>
           <div className="inputContainer">
-            <label htmlFor="Info">Description Information</label>
-            <input
+            <label className="addItemLabel" htmlFor="Info">
+              Description Information
+            </label>
+            <textarea
               type="text"
               name="info"
               value={info}
-              className="addItemInput"
+              className="addItemInput addItemTextArea"
               onChange={this.handleChange}
             />
           </div>
           <div className="inputContainer">
-            <label htmlFor="inCart">In Cart?</label>
+            <label className="addItemLabel" htmlFor="inCart">
+              In Cart?
+            </label>
             <select
               name="inCart"
               value={inCart}
@@ -131,27 +143,35 @@ class AdItem extends Component {
             </select>
           </div>
           <div className="inputContainer">
-            <label htmlFor="Count">Number of Items</label>
+            <label className="addItemLabel" htmlFor="Count">
+              Number of Items
+            </label>
             <input
               type="number"
               name="count"
               value={count}
-              className="inputContainer"
+              className="addItemInput"
               onChange={this.handleChange}
             />
           </div>
           <div className="inputContainer">
-            <label htmlFor="total">Current Total</label>
+            <label className="addItemLabel" htmlFor="total">
+              Current Total
+            </label>
             <input
               type="number"
               name="total"
               value={total}
-              className="inputContainer"
+              className="addItemInput"
               onChange={this.handleChange}
             />
           </div>
           <div>
-            <button type="submit" onClick={this.handleSubmit}>
+            <button
+              type="submit"
+              className="addItemButton"
+              onClick={this.handleSubmit}
+            >
               Add Item
             </button>
           </div>

@@ -4,7 +4,6 @@
 
 .addItemForm {
   max-width: 500px;
-  border: 1px solid black;
   margin: auto;
 }
 
@@ -12,11 +11,37 @@
   font-size: 1.5rem;
 }
 
-.addItemInput {
-  height: 20px;
-  border: 1px solid black;
+.addItemTextArea {
+  height: 100px !important;
 }
 
+.addItemInput {
+  height: 20px;
+  margin: 10px 0;
+  border: 1.5px solid black;
+}
+
+.addItemInput:focus {
+  outline: 0;
+  border: 1.5px solid var(--mainYellow);
+}
+
+.addItemButton {
+  text-transform: capitalize;
+  border: none;
+  background: var(--brandColor);
+  color: var(--mainWhite);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  align-self: baseline;
+  border-radius: 0.5rem 0 0.5rem 0;
+}
+
+.addItemButton:hover {
+  background: var(--altBrand);
+  color: var(--brandColor);
+}
 .inputContainer {
   display: flex;
   flex-direction: column;
