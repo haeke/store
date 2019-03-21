@@ -49,12 +49,10 @@ class AddItem extends Component {
       total
     };
     try {
-      let response = await ecommerce.post("/api/inventory/add", newItem);
-
-      console.log(response);
+      // send a post request to the API to create a newItem, if any fields are left blank, an error object will be passed back to the component
+      await ecommerce.post("/api/inventory/add", newItem);
     } catch (error) {
-      console.error(error);
-      // call setstate to set the errors object
+      // the errors object
       this.setState({
         errors: error.response.data
       });
@@ -76,7 +74,12 @@ class AddItem extends Component {
       <div className="addItemContainer">
         <form className="addItemForm" onSubmit={this.handleSubmit}>
           <div className="inputContainer">
-            <label className="addItemLabel" htmlFor="Title">
+            {/* Each label has a style attribute present that is responsible for changing the label text color to red with an appropriate message indicating that the field is required. */}
+            <label
+              style={errors.title ? { color: "red" } : {}}
+              className="addItemLabel"
+              htmlFor="Title"
+            >
               {errors.title ? errors.title : "Title"}
             </label>
             <input
@@ -88,7 +91,11 @@ class AddItem extends Component {
             />
           </div>
           <div className="inputContainer">
-            <label className="addItemLabel" htmlFor="Image">
+            <label
+              style={errors.img ? { color: "red" } : {}}
+              className="addItemLabel"
+              htmlFor="Image"
+            >
               {errors.img ? errors.img : "Image"}
             </label>
             <input
@@ -100,7 +107,11 @@ class AddItem extends Component {
             />
           </div>
           <div className="inputContainer">
-            <label className="addItemLabel" htmlFor="Price">
+            <label
+              style={errors.price ? { color: "red" } : {}}
+              className="addItemLabel"
+              htmlFor="Price"
+            >
               {errors.price ? errors.price : "Price"}
             </label>
             <input
@@ -112,7 +123,11 @@ class AddItem extends Component {
             />
           </div>
           <div className="inputContainer">
-            <label className="addItemLabel" htmlFor="Company">
+            <label
+              style={errors.company ? { color: "red" } : {}}
+              className="addItemLabel"
+              htmlFor="Company"
+            >
               {errors.company ? errors.company : "Company Name"}
             </label>
             <input
@@ -124,7 +139,11 @@ class AddItem extends Component {
             />
           </div>
           <div className="inputContainer">
-            <label className="addItemLabel" htmlFor="Info">
+            <label
+              style={errors.info ? { color: "red" } : {}}
+              className="addItemLabel"
+              htmlFor="Info"
+            >
               {errors.info ? errors.info : "Description Information"}
             </label>
             <textarea
@@ -156,7 +175,11 @@ class AddItem extends Component {
             </select>
           </div>
           <div className="inputContainer">
-            <label className="addItemLabel" htmlFor="Count">
+            <label
+              style={errors.count ? { color: "red" } : {}}
+              className="addItemLabel"
+              htmlFor="Count"
+            >
               {errors.count ? errors.count : "Number of Items"}
             </label>
             <input
@@ -168,7 +191,11 @@ class AddItem extends Component {
             />
           </div>
           <div className="inputContainer">
-            <label className="addItemLabel" htmlFor="total">
+            <label
+              style={errors.total ? { color: "red" } : {}}
+              className="addItemLabel"
+              htmlFor="total"
+            >
               {errors.total ? errors.total : "Current Total"}
             </label>
             <input

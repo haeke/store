@@ -10,6 +10,7 @@ module.exports = function validateInventory(data) {
   if (validator.isEmpty(data.img)) {
     errors.img = "Image field is required";
   }
+  // The price is of type Number so it needs to be converted into a string before we can call the isEmpty check. I should look for another way to do this.
   if (validator.isEmpty(data.price.toString())) {
     errors.price = "Price field is required";
   }
@@ -25,9 +26,10 @@ module.exports = function validateInventory(data) {
   if (validator.isEmpty(data.total.toString())) {
     errors.total = "Total field is required";
   }
-  console.log("errors object ", errors);
+
   return {
     errors: errors,
+    // errors is an object but needs to be converted into a string before we use the isEmpty function.
     isValid: validator.isEmpty(errors.toString())
   };
 };
