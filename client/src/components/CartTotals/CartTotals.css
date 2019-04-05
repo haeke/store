@@ -20,7 +20,6 @@
 .subTotal,
 .tax,
 .total {
-  color: var(--mainWhite);
   font-size: 1.2rem;
   margin: 5px 0;
 }
